@@ -102,4 +102,20 @@ Status.prototype.getLastBlockHash = function(next) {
   });
 };
 
+Status.prototype.getBlockChainInfo = function(next) {
+  var that = this;
+  async.series([
+    function (cb) {
+      rpc.getBlockChainInfo(function(err, info){
+        if (err) return cb(err);
+
+        that.chain = info.result;
+        return cb();
+      });
+    },
+  ], function (err) {
+    return next(err);
+  });
+};
+
 module.exports = require('soop')(Status);
