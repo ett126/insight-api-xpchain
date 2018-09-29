@@ -48,9 +48,9 @@
     "base58-native": "0.1.2",
     "bignum": "*",
     "morgan": "*",
-    "bitcore": "git://github.com/bitpay/bitcore.git#51c53b16ced6bcaf4b78329955d6814579fe4ee9",
+    "bitcore": "git://github.com/ett126/bitcore-xpchain.git",
     "bufferput": "git://github.com/bitpay/node-bufferput.git",
-    "buffertools": "*",
+    "buffertools": "2.1.6",
     "commander": "^2.3.0",
     "connect-ratelimit": "git://github.com/dharmafly/connect-ratelimit.git#0550eff209c54f35078f46445000797fa942ab97",
     "cron": "^1.0.4",
@@ -67,7 +67,7 @@
     "socket.io": "1.0.6",
     "socket.io-client": "1.0.6",
     "soop": "=0.1.5",
-    "winston": "*",
+    "winston": "2.4.0",
     "xmlhttprequest": "~1.6.0"
   },
   "devDependencies": {
