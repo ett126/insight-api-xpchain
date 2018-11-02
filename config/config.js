@@ -9,7 +9,8 @@ var rootPath = path.normalize(__dirname + '/..'),
   db,
   port,
   b_port,
-  p2p_port;
+  p2p_port,
+  switch_height;
 
 var packageStr = fs.readFileSync(rootPath + '/package.json');
 var version = JSON.parse(packageStr).version;
@@ -27,12 +28,14 @@ if (process.env.INSIGHT_NETWORK === 'livenet') {
   port = '3000';
   b_port = '8762';
   p2p_port = '8798';
+  switch_height = 1000;
 } else {
   env = 'testnet';
   db = home + '/testnet';
   port = '3001';
   b_port = '18762';
   p2p_port = '18798';
+  switch_height = 500;
 }
 port = parseInt(process.env.INSIGHT_PORT) || port;
 
@@ -119,4 +122,5 @@ module.exports = {
   safeConfirmations: safeConfirmations, // PLEASE NOTE THAT *FULL RESYNC* IS NEEDED TO CHANGE safeConfirmations
   ignoreCache: ignoreCache,
   forceRPCsync: forceRPCsync,
+  switch_height: switch_height,
 };
