@@ -57,6 +57,7 @@ module.exports = function(app) {
   // Utils route
   var utils = require('../app/controllers/utils');
   app.get(apiPrefix + '/utils/estimatefee', utils.estimateFee);
+  app.get(apiPrefix + '/utils/resyncRpc', utils.resyncRpc);
 
   // Currency
   var currency = require('../app/controllers/currency');
