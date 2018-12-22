@@ -99,6 +99,24 @@ exports.utxo = function(req, res, next) {
   }
 };
 
+exports.utxoExt = function(req, res, next) {
+  if (!checkSync(req, res)) return;
+
+  var a = getAddr(req, res, next);
+  if (a) {
+    a.updateExt(function(err) {
+      if (err)
+        return common.handleErrors(err, res);
+      else {
+        return res.jsonp(a.unspent);
+      }
+    }, {
+      onlyUnspent: 1,
+      ignoreCache: req.param('noCache')
+    });
+  }
+};
+
 exports.multiutxo = function(req, res, next) {
   if (!checkSync(req, res)) return;
   var as = getAddrs(req, res, next);
