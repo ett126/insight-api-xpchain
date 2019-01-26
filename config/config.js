@@ -66,7 +66,7 @@ if (!dataDir) {
 }
 dataDir += network === 'testnet' ? 'testnet3' : '';
 
-var safeConfirmations = process.env.INSIGHT_SAFE_CONFIRMATIONS || 6;
+var safeConfirmations = process.env.INSIGHT_SAFE_CONFIRMATIONS || 101;
 var ignoreCache = process.env.INSIGHT_IGNORE_CACHE || 0;
 
 
